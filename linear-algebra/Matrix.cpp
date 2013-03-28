@@ -13,12 +13,11 @@
 
 #include "Matrix.h"
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: Matrix
- * Description:  Constructor 1
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Constructor 1
+ *
+ * @param r
+ * @param c
  */
 Matrix::Matrix(int r, int c): mat(r, std::vector<double>(c))
 {
@@ -26,12 +25,12 @@ Matrix::Matrix(int r, int c): mat(r, std::vector<double>(c))
     columns = c;
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: Matrix
- * Description:  Constructor 2
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Constructor 2
+ *
+ * @param r
+ * @param c
+ * @param init_val
  */
 Matrix::Matrix(int r, int c, double init_val): mat(r, std::vector<double>(c, init_val))
 {
@@ -39,12 +38,12 @@ Matrix::Matrix(int r, int c, double init_val): mat(r, std::vector<double>(c, ini
     columns = c;
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator+
- * Description:  Matrix Addition
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Matrix Addition
+ *
+ * @param mtx
+ *
+ * @return
  */
 Matrix Matrix::operator+(const Matrix &mtx) const
 {
@@ -65,12 +64,12 @@ Matrix Matrix::operator+(const Matrix &mtx) const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator-
- * Description:  Matrix Subtraction
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Matrix Subtraction
+ *
+ * @param mtx
+ *
+ * @return
  */
 Matrix Matrix::operator-(const Matrix &mtx) const
 {
@@ -91,12 +90,12 @@ Matrix Matrix::operator-(const Matrix &mtx) const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator*
- * Description:  Matrix Multiplication
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Matrix Multiplication
+ *
+ * @param mtx
+ *
+ * @return
  */
 Matrix Matrix::operator*(const Matrix &mtx) const
 {
@@ -120,12 +119,12 @@ Matrix Matrix::operator*(const Matrix &mtx) const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator*
- * Description:  Scalar Multiplication
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Scalar Multiplication
+ *
+ * @param num
+ *
+ * @return
  */
 Matrix Matrix::operator*(double num) const
 {
@@ -136,12 +135,10 @@ Matrix Matrix::operator*(double num) const
     return m;
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: transpose
- * Description:  Returns transpose of a matrix
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Returns transpose of a matrix
+ *
+ * @return
  */
 Matrix Matrix::transpose() const
 {
@@ -153,12 +150,10 @@ Matrix Matrix::transpose() const
     return m;
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: det
- * Description:  Returns determinant of a matrix
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Returns determinant of a matrix
+ *
+ * @return
  */
 double Matrix::det() const
 {
@@ -203,12 +198,10 @@ double Matrix::det() const
 
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: inv
- * Description:  Returns inverse of a matrix
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Returns inverse of a matrix
+ *
+ * @return
  */
 Matrix Matrix::inv() const
 {
@@ -259,12 +252,12 @@ Matrix Matrix::inv() const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator^
- * Description:  Matrix Exponentiation
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Matrix Exponentiation
+ *
+ * @param n
+ *
+ * @return
  */
 Matrix Matrix::operator^(int n) const
 {
@@ -287,13 +280,12 @@ Matrix Matrix::operator^(int n) const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: operator/
- * Description:  Solution of Ax = b or x = b/A
- *   Algorithm:  Gaussian Elimination
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Solution of Ax = b or x = b/A using Gaussian Elimination
+ *
+ * @param mtx
+ *
+ * @return
  */
 Matrix Matrix::operator/(const Matrix &mtx) const
 {
@@ -364,12 +356,8 @@ Matrix Matrix::operator/(const Matrix &mtx) const
     }
 }
 
-/*
- *--------------------------------------------------------------------------------------
- *       Class:  Matrix
- *      Method:  Matrix :: display
- * Description:  Displays all the elements of a matrix
- *--------------------------------------------------------------------------------------
+/**
+ * @brief Displays all the elements of a matrix
  */
 void Matrix::display() const
 {
